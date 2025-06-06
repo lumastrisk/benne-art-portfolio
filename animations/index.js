@@ -1,9 +1,12 @@
-import gsap, { Power3 } from "gsap";
+// F:\Benne Simsim\website\benne.art\animations\index.js
 
-export const stagger = (target, fromvVars, toVars) => {
-  return gsap.fromTo(
-    target,
-    { opacity: 0, ...fromvVars },
-    { opacity: 1, ...toVars, stagger: 0.2, ease: Power3.easeOut }
-  );
+// All animation logic has been removed to avoid requiring GSAP.
+// These stub functions do nothing for now.
+
+export const stagger = (target, fromVars, toVars) => {
+  // no-op
+};
+
+export const fadeInUp = (target, delay) => {
+  // no-op
 };

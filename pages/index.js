@@ -1,142 +1,240 @@
-import { useRef } from "react";
-import Header from "../components/Header";
-import ServiceCard from "../components/ServiceCard";
-import Socials from "../components/Socials";
-import WorkCard from "../components/WorkCard";
-import { useIsomorphicLayoutEffect } from "../utils";
-import { stagger } from "../animations";
-import Footer from "../components/Footer";
-import Head from "next/head";
-import Button from "../components/Button";
-import Link from "next/link";
-import Cursor from "../components/Cursor";
+// F:\Benne Simsim\website\benne.art\pages\index.js
 
-// Local Data
-import data from "../data/portfolio.json";
+import Head from "next/head";
+import Link from "next/link";
 
 export default function Home() {
-  // Ref
-  const workRef = useRef();
-  const aboutRef = useRef();
-  const textOne = useRef();
-  const textTwo = useRef();
-  const textThree = useRef();
-  const textFour = useRef();
-
-  // Handling Scroll
-  const handleWorkScroll = () => {
-    window.scrollTo({
-      top: workRef.current.offsetTop,
-      left: 0,
-      behavior: "smooth",
-    });
-  };
-
-  const handleAboutScroll = () => {
-    window.scrollTo({
-      top: aboutRef.current.offsetTop,
-      left: 0,
-      behavior: "smooth",
-    });
-  };
-
-  useIsomorphicLayoutEffect(() => {
-    stagger(
-      [textOne.current, textTwo.current, textThree.current, textFour.current],
-      { y: 40, x: -10, transform: "scale(0.95) skew(10deg)" },
-      { y: 0, x: 0, transform: "scale(1)" }
-    );
-  }, []);
+  const artworkSlug = "evening-shadows-living-light";
+  const thumbnailUrl =
+    "https://blue-total-mongoose-458.mypinata.cloud/ipfs/bafybeid3ckk7psvqqtcgqnlje5bqq5srnn7wvzh52nfvzmj4htgahm6mne/Evening_Shadows_Living_Light.jpg";
 
   return (
-    <div className={`relative ${data.showCursor && "cursor-none"}`}>
-      {data.showCursor && <Cursor />}
+    <div
+      style={{
+        backgroundColor: "#0a0a0a",
+        color: "#e0e0e0",
+        minHeight: "100vh",
+        padding: "1rem",
+        fontFamily:
+          '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
+      }}
+    >
       <Head>
-        <title>{data.name}</title>
+        <title>Benjamin Simpson (@bennesimsim)</title>
+        <meta
+          name="description"
+          content="Portfolio of Benjamin Simpson (@bennesimsim) showcasing mixed-media artwork."
+        />
       </Head>
 
-      <div className="gradient-circle"></div>
-      <div className="gradient-circle-bottom"></div>
+      {/* Top Navigation */}
+      <header
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "2rem",
+          marginBottom: "2rem",
+        }}
+      >
+        {/* Home Icon */}
+        <Link href="/">
+          <a
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              color: "#fff",
+              textDecoration: "none",
+            }}
+            title="Home"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+            </svg>
+          </a>
+        </Link>
 
-      <div className="container mx-auto mb-10">
-        <Header
-          handleWorkScroll={handleWorkScroll}
-          handleAboutScroll={handleAboutScroll}
-        />
-        <div className="laptop:mt-20 mt-10">
-          <div className="mt-5">
-            <h1
-              ref={textOne}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-4/5 mob:w-full laptop:w-4/5"
-            >
-              {data.headerTaglineOne}
-            </h1>
-            <h1
-              ref={textTwo}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
-            >
-              {data.headerTaglineTwo}
-            </h1>
-            <h1
-              ref={textThree}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
-            >
-              {data.headerTaglineThree}
-            </h1>
-            <h1
-              ref={textFour}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
-            >
-              {data.headerTaglineFour}
-            </h1>
-          </div>
+        {/* Gallery Link */}
+        <Link href="/gallery">
+          <a
+            style={{
+              color: "#fff",
+              textDecoration: "none",
+              fontSize: "1rem",
+            }}
+          >
+            Gallery
+          </a>
+        </Link>
 
-          <Socials className="mt-2 laptop:mt-5" />
+        {/* Contact Link */}
+        <Link href="/contact">
+          <a
+            style={{
+              color: "#fff",
+              textDecoration: "none",
+              fontSize: "1rem",
+            }}
+          >
+            Contact
+          </a>
+        </Link>
+      </header>
+
+      {/* Main Content */}
+      <main>
+        <h1 style={{ fontSize: "2.5rem", fontWeight: 700, marginBottom: "1rem" }}>
+          Benjamin Simpson (@bennesimsim)
+        </h1>
+
+        {/* Button Bar */}
+        <div style={{ display: "flex", gap: "1rem", marginBottom: "2rem" }}>
+          {/* Coinbase */}
+          <a
+            href="https://commerce.coinbase.com/checkout/a33728b9-f5da-4386-bed1-b7eed7c27f22"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundColor: "#2ecc71",
+              color: "#fff",
+              fontSize: "0.9rem",
+              textDecoration: "none",
+              borderRadius: "4px",
+              height: "32px",
+              padding: "0 0.75rem",
+              minWidth: "120px",
+            }}
+          >
+            Donate with Coinbase
+          </a>
+
+          {/* MetaMask (disabled for now) */}
+          <span
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundColor: "#555",
+              color: "#ccc",
+              fontSize: "0.9rem",
+              borderRadius: "4px",
+              height: "32px",
+              padding: "0 0.75rem",
+              minWidth: "120px",
+              cursor: "not-allowed",
+            }}
+            title="MetaMask donation coming soon"
+          >
+            Donate with MetaMask
+          </span>
+
+          {/* Instagram */}
+          <a
+            href="https://www.instagram.com/bennesimsim/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundColor: "#c13584",
+              color: "#fff",
+              fontSize: "0.9rem",
+              textDecoration: "none",
+              borderRadius: "4px",
+              height: "32px",
+              padding: "0 0.75rem",
+              minWidth: "120px",
+            }}
+          >
+            Instagram
+          </a>
         </div>
-        <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
-          <h1 className="text-2xl text-bold">Work.</h1>
 
-          <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
-            {data.projects.map((project) => (
-              <WorkCard
-                key={project.id}
-                img={project.imageSrc}
-                name={project.title}
-                description={project.description}
-                onClick={() => window.open(project.url)}
-              />
-            ))}
-          </div>
-        </div>
+        {/* Discover My Works */}
+        <section style={{ marginBottom: "2rem" }}>
+          <h2 style={{ fontSize: "1.75rem", fontWeight: 700, marginBottom: "1rem" }}>
+            Discover My Works
+          </h2>
 
-        <div className="mt-10 laptop:mt-30 p-2 laptop:p-0">
-          <h1 className="tablet:m-10 text-2xl text-bold">Services.</h1>
-          <div className="mt-5 tablet:m-10 grid grid-cols-1 laptop:grid-cols-2 gap-6">
-            {data.services.map((service, index) => (
-              <ServiceCard
-                key={index}
-                name={service.title}
-                description={service.description}
-              />
-            ))}
-          </div>
-        </div>
-        {/* This button should not go into production */}
-        {process.env.NODE_ENV === "development" && (
-          <div className="fixed bottom-5 right-5">
-            <Link href="/edit">
-              <Button type="primary">Edit Data</Button>
+          {/* Responsive Thumbnail Card */}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <Link href={`/gallery/${artworkSlug}`}>
+              <a
+                style={{
+                  display: "block",
+                  width: "100%",
+                  maxWidth: "240px",
+                  backgroundColor: "#222",
+                  border: "1px solid #333",
+                  borderRadius: "6px",
+                  overflow: "hidden",
+                  textDecoration: "none",
+                  color: "#fff",
+                  transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-4px)";
+                  e.currentTarget.style.boxShadow =
+                    "0 4px 12px rgba(0, 0, 0, 0.5)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "none";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
+              >
+                <div
+                  style={{
+                    width: "100%",
+                    // To preserve a 3:2 ratio: 240px width → 160px height
+                    height: "0",
+                    paddingBottom: "66.6667%", // 2/3 as percentage
+                    position: "relative",
+                    backgroundColor: "#111",
+                    overflow: "hidden",
+                  }}
+                >
+                  <img
+                    src={thumbnailUrl}
+                    alt="Evening Shadows Living Light"
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
+                <div
+                  style={{
+                    fontSize: "1rem",
+                    backgroundColor: "#222",
+                    padding: "0.75rem",
+                    textAlign: "center",
+                  }}
+                >
+                  Evening Shadows Living Light
+                </div>
+              </a>
             </Link>
           </div>
-        )}
-        <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
-          <h1 className="tablet:m-10 text-2xl text-bold">About.</h1>
-          <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
-            {data.aboutpara}
-          </p>
-        </div>
-        <Footer />
-      </div>
+        </section>
+      </main>
     </div>
   );
 }
