@@ -2,14 +2,18 @@
   {
     "title": "Evening Shadows Living Light",
     "slug": "evening-shadows-living-light",
-    "description": "Titles, toys, and the costumes we cling to—they’re a vanity-fair of dust and echoes. Our grind cashes out as evening shadows, profitless. What endures is the raw pulse of life actually lived, written bit-by-bit into memory—the primordial code that undergirds all matter.",
+    "description": "*Evening Shadows Living Light*, 2025. Digital video, color, sound, 00:20 min, 60 fps. Created using Adobe Premiere Pro, Adobe Photoshop, Topaz Labs. Hosted on IPFS. Music by Benjamin Simpson. Benjamin Simpson Collection.",
     "thumbnail": "https://blue-total-mongoose-458.mypinata.cloud/ipfs/bafybeid3ckk7psvqqtcgqnlje5bqq5srnn7wvzh52nfvzmj4htgahm6mne/Evening_Shadows_Living_Light.jpg",
     "video": "https://blue-total-mongoose-458.mypinata.cloud/ipfs/bafybeid3ckk7psvqqtcgqnlje5bqq5srnn7wvzh52nfvzmj4htgahm6mne/Evening_Shadows_Living_Light.mp4",
     "runtime": "00:20",
     "format": "mp4",
     "fps": 60,
     "creationDate": "2025-05-31",
-    "author": "Benjamin Simpson",
+    "artist": "Benjamin Simpson",
+    "medium": "Digital video, color, sound",
+    "dimensions": "Variable (digital format)",
+    "location": "Benjamin Simpson Collection",
+    "collectionCredit": "Benjamin Simpson",
     "software": [
       "Adobe Premiere Pro",
       "Adobe Photoshop",
@@ -18,6 +22,50 @@
     "ai": [
       "Midjourney",
       "Sora"
-    ]
+    ],
+    "songTitle": "Evening Shadows Theme",
+    "songDescription": "Atmospheric analog synth composition evoking memory, loss, and the flicker of living light.",
+    "songRuntime": "00:20",
+    "songFormat": "mp3",
+    "musicRights": "Original composition by Benjamin Simpson. All rights reserved.",
+    "songDownloadUrl": "https://blue-total-mongoose-458.mypinata.cloud/ipfs/bafybeid3ckk7psvqqtcgqnlje5bqq5srnn7wvzh52nfvzmj4htgahm6mne/Evening_Shadows_Theme.mp3",
+    "instagram": "https://www.instagram.com/reel/DKVTbLwBjen/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    "downloadUrl": "https://blue-total-mongoose-458.mypinata.cloud/ipfs/bafybeid3ckk7psvqqtcgqnlje5bqq5srnn7wvzh52nfvzmj4htgahm6mne/Evening_Shadows_Living_Light.mp4",
+    "license": "Visual and audio components © 2025 Benjamin Simpson. All rights reserved."
+  },
+  {
+    "title": "Porcelain Ghost",
+    "slug": "porcelain-ghost",
+    "description": "Porcelain Ghost evokes the ancient vision of elements unfit to mingle — “iron mixed with miry clay.” Through spectral imagery and fractured sound, the piece contemplates the uneasy fusion of flesh and machine. Where spirit and matter find harmony in living form, the mechanical intrudes as an alien presence, incapable of true union.",
+    "thumbnail": "https://blue-total-mongoose-458.mypinata.cloud/ipfs/bafybeicekud4lhmimtnyp4r4awiceifa3xejpw2w6b3oculqqu5i2gaiwy/porcelain_ghost_thumb.jpg",
+    "video": "https://blue-total-mongoose-458.mypinata.cloud/ipfs/bafybeicekud4lhmimtnyp4r4awiceifa3xejpw2w6b3oculqqu5i2gaiwy/Porcelain_Ghost_N.mp4",
+    "runtime": "00:03:43",
+    "format": "mp4",
+    "fps": 30,
+    "creationDate": "2025-06-09",
+    "artist": "Benjamin Simpson",
+    "medium": "Digital video with original sound, color",
+    "dimensions": "1080 x 1920",
+    "location": "Benjamin Simpson Collection",
+    "collectionCredit": "Benjamin Simpson",
+    "software": [
+      "Adobe Premiere Pro",
+      "Topaz Labs",
+      "Adobe Photoshop"
+    ],
+    "ai": [
+      "Midjourney",
+      "Sora",
+      "Suno"
+    ],
+    "songTitle": "Porcelain Ghost",
+    "songDescription": "Darkwave cinematic elegy blending pulse-driven analog bass, spectral synths, ghost-textured glitches, and breath-heavy vocals. Evokes fractured time and contrasts: fragile vs. eternal, flesh vs. code, angelic vs. decay.",
+    "songRuntime": "00:03:43",
+    "songFormat": "mp3",
+    "musicRights": "Original composition by Benjamin Simpson. All rights reserved.",
+    "songDownloadUrl": "",
+    "instagram": "",
+    "downloadUrl": "https://blue-total-mongoose-458.mypinata.cloud/ipfs/bafybeicekud4lhmimtnyp4r4awiceifa3xejpw2w6b3oculqqu5i2gaiwy/Porcelain_Ghost_N.mp4",
+    "license": "Visual and audio components © 2025 Benjamin Simpson. All rights reserved."
   }
 ]
