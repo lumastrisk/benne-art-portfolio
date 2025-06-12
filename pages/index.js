@@ -22,6 +22,8 @@ export default function Home() {
           name="description"
           content="Portfolio of Benjamin Simpson (@bennesimsim) showcasing mixed-media artwork."
         />
+        {/* Open Graph preview image */}
+        <meta property="og:image" content="/preview.jpg" />
       </Head>
 
       {/* Top Navigation */}
@@ -100,6 +102,7 @@ export default function Home() {
           style={{
             display: "flex",
             gap: "1rem",
+            flexWrap: "wrap",
             marginBottom: "2rem",
           }}
         >
@@ -119,7 +122,7 @@ export default function Home() {
               borderRadius: "4px",
               height: "32px",
               padding: "0 0.75rem",
-              minWidth: "120px",
+              minWidth: "80px",
             }}
           >
             Coinbase
@@ -137,7 +140,7 @@ export default function Home() {
               borderRadius: "4px",
               height: "32px",
               padding: "0 0.75rem",
-              minWidth: "120px",
+              minWidth: "80px",
               cursor: "not-allowed",
             }}
             title="MetaMask donation coming soon"
@@ -161,7 +164,7 @@ export default function Home() {
               borderRadius: "4px",
               height: "32px",
               padding: "0 0.75rem",
-              minWidth: "120px",
+              minWidth: "80px",
             }}
           >
             Instagram
