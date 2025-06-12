@@ -2,12 +2,9 @@
 
 import Head from "next/head";
 import Link from "next/link";
+import galleryData from "../public/data/gallery.json";
 
 export default function Home() {
-  const artworkSlug = "evening-shadows-living-light";
-  const thumbnailUrl =
-    "https://blue-total-mongoose-458.mypinata.cloud/ipfs/bafybeid3ckk7psvqqtcgqnlje5bqq5srnn7wvzh52nfvzmj4htgahm6mne/Evening_Shadows_Living_Light.jpg";
-
   return (
     <div
       style={{
@@ -86,14 +83,26 @@ export default function Home() {
         </Link>
       </header>
 
-      {/* Main Content */}
       <main>
-        <h1 style={{ fontSize: "2.5rem", fontWeight: 700, marginBottom: "1rem" }}>
+        {/* Page Title */}
+        <h1
+          style={{
+            fontSize: "2.5rem",
+            fontWeight: 700,
+            marginBottom: "1rem",
+          }}
+        >
           Benjamin Simpson (@bennesimsim)
         </h1>
 
         {/* Button Bar */}
-        <div style={{ display: "flex", gap: "1rem", marginBottom: "2rem" }}>
+        <div
+          style={{
+            display: "flex",
+            gap: "1rem",
+            marginBottom: "2rem",
+          }}
+        >
           {/* Coinbase */}
           <a
             href="https://commerce.coinbase.com/checkout/a33728b9-f5da-4386-bed1-b7eed7c27f22"
@@ -113,10 +122,10 @@ export default function Home() {
               minWidth: "120px",
             }}
           >
-            Donate with Coinbase
+            Coinbase
           </a>
 
-          {/* MetaMask (disabled for now) */}
+          {/* MetaMask (placeholder) */}
           <span
             style={{
               display: "inline-flex",
@@ -133,7 +142,7 @@ export default function Home() {
             }}
             title="MetaMask donation coming soon"
           >
-            Donate with MetaMask
+            MetaMask
           </span>
 
           {/* Instagram */}
@@ -161,77 +170,85 @@ export default function Home() {
 
         {/* Discover My Works */}
         <section style={{ marginBottom: "2rem" }}>
-          <h2 style={{ fontSize: "1.75rem", fontWeight: 700, marginBottom: "1rem" }}>
+          <h2
+            style={{
+              fontSize: "1.75rem",
+              fontWeight: 700,
+              marginBottom: "1rem",
+            }}
+          >
             Discover My Works
           </h2>
 
-          {/* Responsive Thumbnail Card */}
           <div
             style={{
               display: "flex",
+              flexWrap: "wrap",
+              gap: "1.5rem",
               justifyContent: "center",
             }}
           >
-            <Link href={`/gallery/${artworkSlug}`}>
-              <a
-                style={{
-                  display: "block",
-                  width: "100%",
-                  maxWidth: "240px",
-                  backgroundColor: "#222",
-                  border: "1px solid #333",
-                  borderRadius: "6px",
-                  overflow: "hidden",
-                  textDecoration: "none",
-                  color: "#fff",
-                  transition: "transform 0.2s ease, box-shadow 0.2s ease",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "translateY(-4px)";
-                  e.currentTarget.style.boxShadow =
-                    "0 4px 12px rgba(0, 0, 0, 0.5)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "none";
-                  e.currentTarget.style.boxShadow = "none";
-                }}
-              >
-                <div
+            {galleryData.map((item) => (
+              <Link href={`/gallery/${item.slug}`} key={item.slug}>
+                <a
                   style={{
+                    display: "block",
                     width: "100%",
-                    // To preserve a 3:2 ratio: 240px width → 160px height
-                    height: "0",
-                    paddingBottom: "66.6667%", // 2/3 as percentage
-                    position: "relative",
-                    backgroundColor: "#111",
-                    overflow: "hidden",
-                  }}
-                >
-                  <img
-                    src={thumbnailUrl}
-                    alt="Evening Shadows Living Light"
-                    style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
-                  />
-                </div>
-                <div
-                  style={{
-                    fontSize: "1rem",
+                    maxWidth: "240px",
                     backgroundColor: "#222",
-                    padding: "0.75rem",
-                    textAlign: "center",
+                    border: "1px solid #333",
+                    borderRadius: "6px",
+                    overflow: "hidden",
+                    textDecoration: "none",
+                    color: "#fff",
+                    transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translateY(-4px)";
+                    e.currentTarget.style.boxShadow =
+                      "0 4px 12px rgba(0, 0, 0, 0.5)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "none";
+                    e.currentTarget.style.boxShadow = "none";
                   }}
                 >
-                  Evening Shadows Living Light
-                </div>
-              </a>
-            </Link>
+                  <div
+                    style={{
+                      width: "100%",
+                      height: "0",
+                      paddingBottom: "66.6667%",
+                      position: "relative",
+                      backgroundColor: "#111",
+                      overflow: "hidden",
+                    }}
+                  >
+                    <img
+                      src={item.thumbnail}
+                      alt={item.title}
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
+                  <div
+                    style={{
+                      fontSize: "1rem",
+                      backgroundColor: "#222",
+                      padding: "0.75rem",
+                      textAlign: "center",
+                    }}
+                  >
+                    {item.title}
+                  </div>
+                </a>
+              </Link>
+            ))}
           </div>
         </section>
       </main>
